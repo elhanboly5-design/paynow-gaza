@@ -1,27 +1,65 @@
-<div class="card center">
-  <h2>اختر وسيلة الدفع</h2>
-  <p>يمكنك التبرع بسهولة عبر PayPal أو USDT (TRC20)</p>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>طرق الدفع</title>
+  <style>
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      text-align: center;
+      padding: 30px;
+    }
+    h2 {
+      color: #222;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      background-color: #0070ba;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .wallet-box {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+      display: inline-block;
+      text-align: left;
+    }
+    .wallet-box p {
+      margin: 8px 0;
+      font-size: 14px;
+      direction: ltr;
+    }
+    img {
+      margin-top: 10px;
+      max-width: 180px;
+    }
+  </style>
+</head>
+<body>
+  <h2>اختر وسيلة الدفع المناسبة لك</h2>
 
   <!-- PayPal -->
-  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin-top:15px;">
-    <input type="hidden" name="cmd" value="_donations">
-    <input type="hidden" name="business" value="info@quantraltd.co.uk">
-    <input type="hidden" name="item_name" value="Donation via paynow.ac">
-    <input type="hidden" name="currency_code" value="USD">
-    <input type="hidden" name="return" value="https://paynow.ac/thanks">
-    <input type="hidden" name="cancel_return" value="https://paynow.ac/cancelled">
-    <button type="submit" class="btn" style="background:#0070ba; color:#fff; border:none;">
-      PayPal تبرع عبر
-    </button>
-  </form>
+  <a class="btn" href="https://www.paypal.com/paypalme/infoquantraltd" target="_blank">PayPal عبر</a>
 
-  <!-- USDT -->
-  <div style="margin-top:25px;">
-    <h3>تبرع عبر USDT (TRC20)</h3>
-    <p>عنوان المحفظة:</p>
-    <input type="text" value="TPgGspfthoVxUsEwTusfh7iK5ts7UXfSjk" readonly 
-           style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;">
-    <p style="margin-top:10px;">امسح QR code:</p>
-    <img src="qr-usdt.png" alt="USDT QR Code" style="max-width:200px;">
+  <!-- USDT TRC20 -->
+  <div class="wallet-box">
+    <h3>USDT (TRC20)</h3>
+    <p><strong>عنوان المحفظة:</strong></p>
+    <p>TPgGspfthoVxUsEwTusfh7iK5ts7UXfSjk</p>
+    <p><strong>امسح QR code:</strong></p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?data=TPgGspfthoVxUsEwTusfh7iK5ts7UXfSjk&size=180x180" alt="USDT QR Code">
   </div>
-</div>
+</body>
+</html>

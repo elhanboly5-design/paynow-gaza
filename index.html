@@ -1,68 +1,27 @@
-<!doctype html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>تبرع لغزة - paynow.ac</title>
-  <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0f172a;color:#e2e8f0;margin:0}
-    .wrap{max-width:860px;margin:0 auto;padding:32px}
-    .card{background:#111827;border:1px solid #1f2937;border-radius:16px;padding:24px;margin-top:16px}
-    h1{font-size:28px;margin:0 0 8px}
-    p{line-height:1.7;margin:8px 0}
-    .btn{display:inline-block;padding:12px 16px;border-radius:10px;border:1px solid #334155;background:#0ea5e9;color:#fff;text-decoration:none;font-weight:600;cursor:pointer}
-    .btn.secondary{background:#16a34a}
-    .btn.dark{background:#334155}
-    input{width:100%;padding:10px;border-radius:10px;border:1px solid #334155;background:#0b1220;color:#e2e8f0}
-    .muted{color:#94a3b8;font-size:14px}
-    .copy{margin-top:8px}
-    .center{text-align:center}
-    .foot{font-size:12px;color:#94a3b8;margin-top:16px}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <h1>تبرع عاجل لغزة</h1>
-    <p>جزاك الله خيرًا. اختر وسيلة الدفع المناسبة لك.</p>
+<div class="card center">
+  <h2>اختر وسيلة الدفع</h2>
+  <p>يمكنك التبرع بسهولة عبر PayPal أو USDT (TRC20)</p>
 
-    <!-- PayPal + Visa/MasterCard -->
-    <div class="card">
-      <h2>التبرع عبر PayPal أو البطاقة (Visa/MasterCard)</h2>
-      <form action="https://www.paypal.com/donate" method="post" target="_top">
-        <input type="hidden" name="business" value="aelhanboly5@gmail.com">
-        <input type="hidden" name="item_name" value="Donation for Gaza - paynow.ac">
-        <input type="hidden" name="currency_code" value="USD">
-        <label>المبلغ (بالدولار)</label>
-        <input type="number" name="amount" min="1" step="1" placeholder="10" required>
-        <div class="copy" style="display:flex;gap:8px;margin-top:12px">
-          <button class="btn" type="submit">تبرّع عبر PayPal / البطاقة</button>
-          <a class="btn dark" href="https://www.paypal.com/donate?business=aelhanboly5%40gmail.com&currency_code=USD" target="_blank" rel="noopener">فتح صفحة التبرع</a>
-        </div>
-        <p class="muted">قد يظهر خيار الدفع بالبطاقة بدون إنشاء حساب (Guest Checkout) حسب بلد المتبرّع.</p>
-      </form>
-    </div>
+  <!-- PayPal -->
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="margin-top:15px;">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="info@quantraltd.co.uk">
+    <input type="hidden" name="item_name" value="Donation via paynow.ac">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="return" value="https://paynow.ac/thanks">
+    <input type="hidden" name="cancel_return" value="https://paynow.ac/cancelled">
+    <button type="submit" class="btn" style="background:#0070ba; color:#fff; border:none;">
+      PayPal تبرع عبر
+    </button>
+  </form>
 
-    <!-- USDT TRC20 -->
-    <div class="card">
-      <h2>USDT (شبكة TRC20)</h2>
-      <label>عنوان المحفظة</label>
-      <input id="usdtAddr" value="TPgGspfthoVxUsEwTusfh7iK5ts7UXfSjk" readonly>
-      <div class="copy">
-        <button class="btn secondary" onclick="copyUSDT()">نسخ العنوان</button>
-      </div>
-      <p class="muted">أرسل على شبكة TRON (TRC20). بعد الإرسال أرسل لقطة على: <b>aelhanboly5@gmail.com</b>.</p>
-    </div>
-
-    <div class="center foot">© paynow.ac</div>
+  <!-- USDT -->
+  <div style="margin-top:25px;">
+    <h3>تبرع عبر USDT (TRC20)</h3>
+    <p>عنوان المحفظة:</p>
+    <input type="text" value="TPgGspfthoVxUsEwTusfh7iK5ts7UXfSjk" readonly 
+           style="width:100%;padding:8px;border:1px solid #ccc;border-radius:6px;">
+    <p style="margin-top:10px;">امسح QR code:</p>
+    <img src="qr-usdt.png" alt="USDT QR Code" style="max-width:200px;">
   </div>
-
-  <script>
-    function copyUSDT(){
-      const i=document.getElementById('usdtAddr');
-      i.select(); i.setSelectionRange(0, 99999);
-      document.execCommand('copy');
-      alert('تم نسخ عنوان USDT');
-    }
-  </script>
-</body>
-</html>
+</div>
